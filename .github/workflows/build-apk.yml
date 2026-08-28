@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Create Android platform project
+        run: flutter create --platforms=android --project-name locked_in --org com.aryoluke .
+
       - name: Build release APK
         run: flutter build apk --release
 

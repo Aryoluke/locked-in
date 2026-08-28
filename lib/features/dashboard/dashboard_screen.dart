@@ -33,11 +33,13 @@ class DashboardScreen extends StatelessWidget {
         const SizedBox(width: 12),
         Expanded(child: _MetricCard(icon: Icons.shield, value: '${state.level}', label: 'level', color: const Color(0xFF16C784))),
       ]))),
-      const SliverPadding(padding: EdgeInsets.fromLTRB(20, 28, 20, 10), sliver: SliverToBoxAdapter(child: SectionTitle('Today’s plan', action: 'MINI CORE'))),
-      SliverPadding(padding: const EdgeInsets.symmetric(horizontal: 20), sliver: SliverToBoxAdapter(child: Card(child: Padding(padding: const EdgeInsets.all(18), child: Column(children: const [
+      const SliverPadding(
+        padding: EdgeInsets.fromLTRB(20, 28, 20, 10),
+        sliver: SliverToBoxAdapter(child: SectionTitle('Today’s plan', action: 'MINI CORE'))),
+      SliverPadding(padding: const EdgeInsets.fromLTRB(20, 28, 20, 10), sliver: SliverToBoxAdapter(child: Card(child: Padding(padding: const EdgeInsets.all(18), child: Column(children: const [
         ListTile(contentPadding: EdgeInsets.zero, leading: Icon(Icons.fitness_center, color: Color(0xFF16C784)), title: Text('Train with intent'), subtitle: Text('Log one exercise in the Train tab')),
         Divider(),
-        ListTile(contentPadding: EdgeInsets.zero, leading: Icon(Icons.check_circle_outline, color: Color(0xFFE8B949)), title: Text('Close your habits'), subtitle: Text('Hydration, creatine, skincare, study')),
+        ListTile(contentPadding: EdgeInsets.zero, leading: Icon(Icons.check_circle_outline, color: Color(0xFFE8B949)), title: Text('Close your habits'), subtitle: Text('Hydration, creating, skincare, study')),
       ]))))),
       const SliverPadding(padding: EdgeInsets.fromLTRB(20, 28, 20, 10), sliver: SliverToBoxAdapter(child: SectionTitle('Badges', action: 'COMING SOON'))),
       SliverPadding(padding: const EdgeInsets.fromLTRB(20, 0, 20, 24), sliver: SliverToBoxAdapter(child: Card(child: Padding(padding: const EdgeInsets.all(18), child: Row(children: const [
@@ -60,7 +62,7 @@ class _HeroCard extends StatelessWidget {
     ProgressBar(value: state.levelProgress, color: const Color(0xFFE8B949)),
     const SizedBox(height: 8),
     Text('${state.levelXp} / 250 XP to next level', style: const TextStyle(color: Colors.white70)),
-  ]));
+  ])));
 }
 
 class _MetricCard extends StatelessWidget {
@@ -70,5 +72,5 @@ class _MetricCard extends StatelessWidget {
   final String label;
   final Color color;
   @override
-  Widget build(BuildContext context) => Card(child: Padding(padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8), child: Column(children: [Icon(icon, color: color), const SizedBox(height: 8), Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900)), const SizedBox(height: 2), Text(label, style: const TextStyle(fontSize: 11, color: Colors.white60))]));
+  Widget build(BuildContext context) => Card(child: Padding(padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8), child: Column(children: [Icon(icon, color: color), const SizedBox(height: 8), Text(value, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900)), const SizedBox(height: 2), Text(label, style: const TextStyle(fontSize: 11, color: Colors.white60))])));
 }
